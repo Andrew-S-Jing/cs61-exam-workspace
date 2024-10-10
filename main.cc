@@ -6,12 +6,12 @@
 #include <map>
 #include <vector>
 
-struct header {
+struct i_am_a_struct {
     char c;
     int i;
 };
 
 int main() {
-    header h = {0, 1234};
-    std::cout << alignof(h) << '\n';
+    std::cout << "Size:" << sizeof(i_am_a_struct) << '\n';
+    std::cout << "Alignment:" << alignof(i_am_a_struct) << '\n';
 }
