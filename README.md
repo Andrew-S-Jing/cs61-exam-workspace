@@ -1,6 +1,8 @@
 Good luck on the exam!
 
 How to use the repo:
+First, make sure you can run wsl or docker in this folder!
+
 `make`
     Compiles your `main.cc` code into
         1.  Machine code/executable code in the file `main`
