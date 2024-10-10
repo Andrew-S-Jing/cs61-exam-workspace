@@ -2,16 +2,16 @@ CXX = g++ -std=gnu++2a
 CXXFLAGS = -Wall -Wextra -g
 TARGET = main
 
-all: clean $(TARGET)
+all: $(TARGET)
 
 o: $(TARGET)-optimized
 
-$(TARGET): main.cc
+$(TARGET): clean main.cc
 	$(CXX) -O0 $(CXXFLAGS) $(TARGET).cc -o $(TARGET)
 	objdump -d $(TARGET) >> $(TARGET).asm
 	./$(TARGET)
 
-$(TARGET)-optimized:
+$(TARGET)-optimized: clean main.cc
 	$(CXX) $(CXXFLAGS) $(TARGET).cc -o $(TARGET)
 	objdump -d $(TARGET) >> $(TARGET).asm
 	./$(TARGET)
